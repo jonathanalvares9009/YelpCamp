@@ -1,26 +1,20 @@
 {
-  "name": "yelpcamp",
+  "name": "YelpCamp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jonathanalvares9009/YelpCamp.git"
-  },
-  "author": "Jonathan Alvares",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jonathanalvares9009/YelpCamp/issues"
-  },
-  "homepage": "https://github.com/jonathanalvares9009/YelpCamp#readme",
   "dependencies": {
     "ejs": "^3.1.5",
     "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
+    "joi": "^17.2.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.11.4"
+    "mongoose": "^5.10.4"
   }
 }
