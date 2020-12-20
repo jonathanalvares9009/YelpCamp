@@ -23,8 +23,9 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
+const MongoDBStore = require('connect-mongo')(session);
 
-const mongoUrl = 'mongodb://localhost:27017/yelp-camp' || 'mongodb+srv://Jonathan:3Swm9JAJ5rvrGka3@cluster0.f1qj7.mongodb.net/yelp-camp?retryWrites=true&w=majority';
+const mongoUrl = 'mongodb://localhost:27017/yelp-camp' || process.env.DB_URL;
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -49,11 +50,20 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(mongoSanitize({
     replaceWith: '_'
-}))
+}));
+
+const secret = process.env.SECRET || 'thisisabadsecret';
+
+const store = new MongoDBStore({
+    url: mongoUrl,
+    secret,
+    touchAfter: 24*60*60
+})
 
 const sessionConfig = {
+    store,
     name: 'session',
-    secret: 'thisshouldbeabettersecret!',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
