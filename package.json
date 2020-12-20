@@ -7,8 +7,8 @@
     "port": "8080"
   },
   "scripts": {
-    "start": "node app.js",
-    "build": "webpack"
+    "start": "node app.js"
+    // "build": "webpack"
   },
   "keywords": [],
   "author": "",
