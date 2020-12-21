@@ -1,4 +1,4 @@
-**YelpCamp** is a website that lists all the campgounds stored in the database.
+**YelpCamp** is a website that lists all the campgounds stored in the database and has many more features.
 
 To install my code on your computer, you need **Node.js**.
 
