@@ -17,7 +17,7 @@ Here's the project structure:
 - **routes folder** contains all the routes and they are divided further into logical files.
 - **seeds folder** contains all the seeding files to fill the database.
 - **utils folder** contains all the general us js files.
-- **views folder** contains all the **HTNL** and **CSS** code.
+- **views folder** contains all the **HTML** and **CSS** code.
 - **app.js** is the heart of the application it is run before anything.
 - **middleware.js** contains all the middleware.
 - **schemas.js** contains all the mongoDB error testing.
